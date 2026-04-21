@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #121212; color: white; }
+        .form-control, .form-select { background-color: #2a2a2a; color: white; border: 1px solid #444; }
+        .form-control:focus { background-color: #333; color: white; border-color: #2ecc71; box-shadow: none; }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5 bg-dark p-4 rounded-4 border border-secondary shadow">
+                <h3 class="text-success mb-4">Submit Feedback</h3>
+                <input type="text" id="fName" class="form-control mb-3" placeholder="Name">
+                <textarea id="fMsg" class="form-control mb-3" placeholder="Comments"></textarea>
+                <select id="fRate" class="form-select mb-4">
+                    <option value="">Select Rating</option>
+                    <option>5 Stars</option>
+                    <option>4 Stars</option>
+                </select>
+                <button onclick="send()" class="btn btn-success w-100">Submit</button>
+                <a href="dashboard.html" class="btn btn-link text-secondary w-100 mt-2">Go Back</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function send() {
+            if(!document.getElementById('fName').value || !document.getElementById('fMsg').value) {
+                alert("Please fill all fields!");
+            } else {
+                alert("Success! Thank you for your feedback.");
+                window.location.href = "dashboard.html";
+            }
+        }
+    </script>
+</body>
+</html>
